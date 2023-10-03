@@ -4,25 +4,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Inter:wght@400;700;900&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Inconsolata:wght@400;700;900&family=Roboto:wght@400;700&display=swap');
+  </style>
   <title>Document</title>
 </head>
 
 <body>
-  <h1>Gerador de senha</h1>
-  <p>Utilize onosso gerador online para criar uma senha forte e segura.</p>
+  <main>
+    <secction class="hero">
+      <h1 class="title">Gerador de senha</h1>
+      <p class="subtitle">Utilize onosso gerador online para criar uma senha forte e segura.</p>
+    </secction>
 
-  <input type="text" name="password" id="password" />
+    <section class="box">
+      <div class="password">
+        <div class="text">
+          <input type="text" name="password" id="password" />
+        </div>
 
-  <input type="range" name="password-length" id="password-length" value="16" min="4" max="64" />
 
-  <button id="copy">copiar senha</button>
+        <div class="actions">
+          <button id="copy-1"><img src="copy.svg" width="42"></button>
+          <button id="renew"><img src="renew.svg" width="42"></button>
+        </div>
+      </div>
+    </section>
 
+
+    <input type="range" name="password-length" id="password-length" value="16" min="4" max="64" />
+
+    <button id="copy-2">copiar senha</button>
+  </main>
   <script>
     let passwordLength = 16
     const inputEl = document.querySelector("#password")
     function generatePassword() {
       const chars =
-        "abcdefghjkmnpqrstuvwxyzABCDEFGJKMNPQRSTUVWYZ123456789?!@()[]"
+        "abcdefghjkmnpqrstuvwxyzABCDEFGJKMNPQRSTUVWYZ123456789?!@*()[]"
 
       let password = ""
 
@@ -47,8 +73,10 @@
       generatePassword()
     })
 
-    const copyButtonEl = document.querySelector("#copy")
-    copyButtonEl.addEventListener("click", copy)
+    document.querySelector("#copy-1")
+    .addEventListener("click", copy)
+    document.querySelector("#copy-2")
+    .addEventListener("click", copy)
 
     generatePassword()
   </script>
