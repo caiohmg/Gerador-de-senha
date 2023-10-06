@@ -38,7 +38,7 @@ main {
 }
 
 .password .text {
-  flex: 1;
+  flex: 1; 
 }
 
 .password .text input {
@@ -55,6 +55,17 @@ main {
   -ms-user-select: none;
   user-select: none;
 }
+
+.password .text input.font-sm {
+  font-size: 2rem;
+}
+.password .text input.font-xs {
+  font-size: 1.5rem;
+}
+.password .text input.font-xxs {
+  font-size: 1rem;
+}
+
 
 .password .actions button {
   background-color: transparent;
@@ -108,7 +119,6 @@ main {
 }
 .customize .password-length {
   flex: 1;
-  margin-top: -1.5rem;
 }
 .customize .slider {
   -webkit-appearance: none;
@@ -198,4 +208,43 @@ main {
 
 .checkbox-container input:checked ~ .checkmark:after {
   display: block;
+}
+
+.submit {
+  text-align: center;
+}
+
+.submit button {
+  background-color: #bb6bd9;
+  font-size: 1.375rem;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  transition: all 0,2s;
+}
+.submit button:hover {
+  background-color: #9b51e0;
+}
+@media only screen and (max-width: 480px){
+  .password {
+    padding: 1rem;
+  }
+  .password .text input {
+    font-size: 1.5rem;
+  }
+  .password .text input.font-sm {
+    font-size: 1.2rem;
+  }
+  .password .text input.font-xs {
+    font-size: 1rem;
+  }
+  .password .text input.font-xxs {
+    font-size: 1rem;
+  }
+  .password .actions img {
+    width: 24px;
+    
+  }
 }
